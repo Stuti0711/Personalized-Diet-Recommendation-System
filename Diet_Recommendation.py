@@ -2,9 +2,9 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import google.generativeai as genai
-
+import os
 # Configure Google Gemini AI
-genai.configure(api_key="AIzaSyDSTetT2Y7AXytGWNeCEicJ1YYS9LQ5QtQ")
+genai.configure(api_key=os.getenv("Gemini_api_key"))
 
 # Load datase
 food_data = pd.read_csv('updated_food_500_health_recommended.csv')
